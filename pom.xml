@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>quick.boot</groupId>
+  <artifactId>quick-boot-web</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>quick-boot-web</name>
+  <!-- FIXME change it to the project's website -->
+  <description>基于spring 生态圈合成的快速开发工具类减少一切重复的CRUD</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.3.5.RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <!-- 绑定source插件到Maven的生命周期,并在生命周期后执行绑定的source的goal -->
+        <executions>
+          <execution>
+            <!-- 绑定source插件到Maven的生命周期 -->
+            <phase>compile</phase>
+            <!--在生命周期后执行绑定的source插件的goals -->
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
