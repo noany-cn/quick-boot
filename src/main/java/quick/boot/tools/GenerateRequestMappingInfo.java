@@ -37,8 +37,10 @@ public final class GenerateRequestMappingInfo {
 		Api classApi = handlerType.getAnnotation(Api.class);
 		if ( classApi != null) {
 			if (StringUtils.hasText(classApi.prefix())) paths.add(classApi.prefix());
-			if (StringUtils.hasText(classApi.mapping())) paths.add(classApi.mapping());
-		} else paths.add(analyzePath(handlerType.getSimpleName()));
+			if (StringUtils.hasText(classApi.mapping())) {
+				paths.add(classApi.mapping());
+			} else paths.add(analyzePath(handlerType.getSimpleName()));
+		}
 
 		Api methodApi = method.getAnnotation(Api.class);
 		if (methodApi != null ) {
